@@ -12,7 +12,12 @@ data-files:          K8055D.a
 
 Library
   Exposed-modules:
-    Bindings.K8055   
+    Bindings.K8055,
+    Bindings.K8055.AnalogIn,
+    Bindings.K8055.AnalogOut,
+    Bindings.K8055.DigitalOut,
+    Bindings.K8055.DigitalIn,
+    Bindings.K8055.Counters
   
   Build-depends: 
     base >= 3 && < 5
@@ -21,4 +26,7 @@ Library
     K8055D
 
   extensions:
-    ForeignFunctionInterface  
+    ForeignFunctionInterface
+
+  ghc-options:
+    -Wall  
