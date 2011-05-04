@@ -1,6 +1,7 @@
-Name:                K8055
+Name:                Bindings-K8055
 Version:             0.1
 Synopsis:            Bindings to Velleman K8055 dll
+description:         Bindings to Velleman K8055 dll for interfacing USB I/O board.
 License:             BSD3
 License-file:        LICENSE
 Author:              Joris Putcuyps
