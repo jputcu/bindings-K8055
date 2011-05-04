@@ -1,0 +1,24 @@
+LIBRARY K8055D
+EXPORTS
+    Version
+    OpenDevice
+    CloseDevice
+    ReadAnalogChannel
+    SetAllAnalog
+    ClearAllAnalog
+    SetAllDigital
+    ClearAllDigital
+    ClearDigitalChannel
+    SetDigitalChannel
+    ReadDigitalChannel
+    ReadAllDigital
+    OutputAnalogChannel
+    ClearAnalogChannel
+    SetAnalogChannel
+    WriteAllDigital
+    OutputAllAnalog
+    ReadCounter
+    ResetCounter
+    SetCurrentDevice
+    SearchDevices
+    ReadAllAnalog

@@ -1,0 +1,24 @@
+Name:                K8055
+Version:             0.1
+Synopsis:            Bindings to Velleman K8055 dll
+License:             BSD3
+License-file:        LICENSE
+Author:              Joris Putcuyps
+Maintainer:          Joris.Putcuyps@gmail.com
+Category:            FFI
+Build-type:          Simple
+Cabal-version:       >=1.2
+data-files:          K8055D.a
+
+Library
+  Exposed-modules:
+    Bindings.K8055   
+  
+  Build-depends: 
+    base >= 3 && < 5
+
+  extra-libraries:
+    K8055D
+
+  extensions:
+    ForeignFunctionInterface  
