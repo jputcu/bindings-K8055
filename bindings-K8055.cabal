@@ -25,14 +25,7 @@ Library
   Build-depends: 
     base >= 3 && < 5
 
-  extra-libraries:
-    K8055D
-
-  extra-lib-dirs:
-    .
-
-  extensions:
-    ForeignFunctionInterface
-
-  ghc-options:
-    -Wall  
+  extra-libraries: K8055D
+  extra-lib-dirs: .
+  extensions: ForeignFunctionInterface
+  ghc-options: -Wall
