@@ -1,5 +1,5 @@
 Name:                bindings-K8055
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Bindings to Velleman K8055 dll
 description:         Bindings to Velleman K8055 dll for interfacing USB I/O board.
 License:             BSD3
@@ -11,7 +11,7 @@ bug-reports:         https://github.com/jputcu/bindings-K8055/issues
 Category:            FFI
 Build-type:          Simple
 Cabal-version:       >=1.2
-extra-source-files:  K8055D.def K8055D.a
+extra-source-files:  K8055D.def libK8055D.a
 
 Library
   Exposed-modules:
