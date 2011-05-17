@@ -1,4 +1,4 @@
-module Bindings.K8055.DigitalIn (  
+module Bindings.K8055.DigitalIn (
   DigitalInput(..),
   readDigitalChannel,
   readAllDigital
@@ -16,7 +16,7 @@ data DigitalInput
   | DigitalIn6
   | DigitalIn7
   | DigitalIn8
-    
+
 digitalInputId :: Num a => DigitalInput -> a
 digitalInputId input =
   case input of

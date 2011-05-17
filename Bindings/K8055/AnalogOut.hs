@@ -14,9 +14,9 @@ import Data.Word
 data AnalogOutput
   = AnalogOut1
   | AnalogOut2
-    
+
 analogOutputId :: Num a => AnalogOutput -> a
-analogOutputId output =                                       
+analogOutputId output =
   case output of
     AnalogOut1 -> 0
     AnalogOut2 -> 1
@@ -32,7 +32,7 @@ outputAnalogChannel channel dat = do
 
 foreign import stdcall unsafe "OutputAllAnalog"
   c_OutputAllAnalog :: CInt -> CInt -> IO ()
-                       
+
 -- | Sets both analogue output channels according to the data
 outputAllAnalog :: Word8 -> Word8 -> IO ()
 outputAllAnalog val1 val2 = do
@@ -50,13 +50,13 @@ clearAnalogChannel channel = do
 
 foreign import stdcall unsafe "ClearAllAnalog"
   c_ClearAllAnalog :: IO ()
-                   
+
 -- | Sets all analogue output channels to minimum
 clearAllAnalog :: IO ()
 clearAllAnalog = c_ClearAllAnalog
 
 
-foreign import stdcall unsafe "SetAnalogChannel"      
+foreign import stdcall unsafe "SetAnalogChannel"
   c_SetAnalogChannel :: CInt -> IO ()
 
 -- | Sets the analogue output channel to maximum
@@ -67,7 +67,7 @@ setAnalogChannel channel = do
 
 foreign import stdcall unsafe "SetAllAnalog"
   c_SetAllAnalog :: IO ()
-                    
+
 -- | Sets all analogue output channels to maximum
 setAllAnalog :: IO ()
 setAllAnalog = c_SetAllAnalog

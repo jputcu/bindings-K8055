@@ -11,7 +11,7 @@ import Foreign.C
 data Counter
   = Counter1
   | Counter2
-    
+
 counterId :: Num a => Counter -> a
 counterId cnt =
   case cnt of
@@ -29,8 +29,8 @@ resetCounter cnt =
 
 
 foreign import stdcall unsafe "ReadCounter"
-  c_ReadCounter :: CInt -> IO CInt        
-                   
+  c_ReadCounter :: CInt -> IO CInt
+
 -- | Reads the content of the pulse counte rnumber 1 or counter number 2
 readCounter :: Counter -> IO Int
 readCounter cnt = do
@@ -42,7 +42,7 @@ foreign import stdcall unsafe "SetCounterDebounceTime"
   c_SetCounterDebounceTime :: CInt -> CInt -> IO ()
 
 -- | Sets the debounce time to the pulse counter
-setCounterDebounceTime :: Counter    
+setCounterDebounceTime :: Counter
                           -> Int    -- ^ 0 - 5000
                           -> IO ()
 setCounterDebounceTime cnt debounce =

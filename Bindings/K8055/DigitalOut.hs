@@ -64,7 +64,7 @@ foreign import stdcall unsafe "SetDigitalChannel"
 
 -- | Sets the output channel
 setDigitalChannel :: DigitalOutput -> IO ()
-setDigitalChannel dig = 
+setDigitalChannel dig =
   c_SetDigitalChannel (digitalOutputId dig)
 
 

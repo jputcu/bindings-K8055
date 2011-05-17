@@ -24,25 +24,25 @@ import Bindings.K8055.DigitalIn
 import Bindings.K8055.Counters
 
 
--- | Depends on jumpers SK5, SK6 
-data CardAddress 
+-- | Depends on jumpers SK5, SK6
+data CardAddress
   = Card1  -- ^ SK5:ON  SK6:ON
   | Card2  -- ^ SK5:OFF SK6:ON
   | Card3  -- ^ SK5:ON  SK6:OFF
   | Card4  -- ^ SK5:OFF SK6:OFF
-    
+
 addressId :: Num a => CardAddress -> a
-addressId address = 
+addressId address =
   case address of
     Card1 -> 0
     Card2 -> 1
     Card3 -> 2
     Card4 -> 3
 
-    
+
 foreign import stdcall unsafe "Version"
   c_Version :: IO CInt
-               
+
 getVersion :: IO Int
 getVersion = do
   vers <- c_Version
@@ -54,9 +54,9 @@ foreign import stdcall unsafe "OpenDevice"
 
 foreign import stdcall unsafe "CloseDevice"
   c_CloseDevice :: IO ()
-                   
+
 -- | Device is opened, action is performed and device is closed
-withDevice :: CardAddress -> IO a -> IO a 
+withDevice :: CardAddress -> IO a -> IO a
 withDevice address action = do
   ret <- c_OpenDevice (addressId address)
   when (ret /= 0) (error "open device failed")
