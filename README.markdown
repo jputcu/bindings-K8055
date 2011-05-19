@@ -36,19 +36,21 @@ Then all you need to do is install the cabal package:
 
 Example
 -------
-Press a button, digital in, an run the following code:
+Press a button, digital in, and try the following ghci code:
+
+    > import Bindings.K8055
+    > withDevice Card1 (readAllDigital >>= print)
+    0
+
+Or compiled. Watch out, you need the `libK8055D.a` interface library, which was packaged in this cabal
+package and was probably installed in `%APPDATA%\cabal\bindings-K8055-0.1.2`. By putting it in the
+subdirectory `ghc-<version>` it should be found by the compiler.
 
     import Bindings.K8055
 
     main :: IO ()
     main =
       withDevice Card1 (readAllDigital >>= print)
-
-Or using ghci:
-
-    > import Bindings.K8055
-    > withDevice Card1 (readAllDigital >>= print)
-    0
 
 
 [Velleman K8055 SDK]: http://www.velleman.eu/downloads/files/downloads/k8055_sdk_version4.zip
