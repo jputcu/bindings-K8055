@@ -13,7 +13,7 @@ How is works
 ------------
 Velleman provides a `K8055D.dll`, so this is a **Windows-only solution**, to interact with the board.
 A FFI interface has been written to interact with the dll functions.
-For this I had to create a definition file `K8055D.def` and run `dlltool -k -d K8055D.def -l K8055D.dll.a`.
+For this I had to create a definition file `K8055D.def` and run `dlltool -k -d K8055D.def -l libK8055D.a`.
 
 Some Background
 ---------------

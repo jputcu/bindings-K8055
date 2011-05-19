@@ -11,7 +11,7 @@ bug-reports:         https://github.com/jputcu/bindings-K8055/issues
 Category:            FFI
 Build-type:          Simple
 Cabal-version:       >=1.2
-data-files:          README.markdown K8055D.def K8055D.dll.a
+data-files:          README.markdown K8055D.def libK8055D.a
 
 Library
   Exposed-modules:
